@@ -53,7 +53,7 @@ def play_note(cfg: AudioConfig, note: Note):
         sig = np.column_stack([sig, sig])
     elif cfg.channels != 1:
         raise ValueError("Only 1 or 2 channels supported")
-    sd.play(sig, samplerate=cfg.sample_rate)
+    sd.play(sig, samplerate=cfg.sample_rate, device=cfg.device_index_output )
     sd.wait()
 
 def main():
@@ -61,6 +61,7 @@ def main():
     harmonic_settings = HarmonicSettings(10, 0.04, 1.4)
     gen = harmonic_generator(harmonic_settings)
     note = Note(440.0, 2.0, 0.5, gen)
+    #note = Note(440.0, 2.0, 0.5, sine_wave)
     play_note(cfg, note)
 
 if __name__ == "__main__":

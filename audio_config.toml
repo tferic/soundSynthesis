@@ -1,0 +1,5 @@
+device_index_input = 6
+device_index_output = 6
+sample_rate = 48000
+channels = 1
+

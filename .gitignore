@@ -1,0 +1,10 @@
+# ignore Python virtual env (required for module 'sounddevice')
+venv/
+synth-env/
+
+# Bytecode
+__pycache__/
+*.py[cod]
+
+# IDE/editor config
+.vscode/
